@@ -15,11 +15,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
-  late InfoAndroid infoAndroid;
-
   @override
   void initState() {
-    infoAndroid = InfoAndroid();
     super.initState();
   }
 
@@ -36,7 +33,7 @@ class _MyAppState extends State<MyApp> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text('Running on:'),
-              Text(infoAndroid.toString()),
+              InfoAndroid(),
             ],
           ),
         ),
