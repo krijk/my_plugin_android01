@@ -1,0 +1,32 @@
+name: my_plugin_android01_example
+description: my android plugin 01
+
+publish_to: 'none'
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.2
+
+  flutter:
+    sdk: flutter
+
+  my_plugin_android01:
+    # When depending on this package from a real application you should use:
+    #   my_plugin_android01: ^x.y.z
+    # See https://dart.dev/tools/pub/dependencies#version-constraints
+    # The example app is bundled with the plugin so we use a path dependency on
+    # the parent directory to use the current plugin's version.
+    path: ../
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
