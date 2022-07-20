@@ -28,8 +28,14 @@ class MethodChannelMyPluginAndroid01 extends MyPluginAndroid01Platform {
   }
 
   @override
-  Future<String?> getAPIVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getAPIVersion');
+  Future<String?> getApiVersion() async {
+    final version = await methodChannel.invokeMethod<String>('getApiVersion');
+    return version;
+  }
+
+  @override
+  Future<int?> getApiInt() async {
+    final version = await methodChannel.invokeMethod<int>('getApiInt');
     return version;
   }
 }

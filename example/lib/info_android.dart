@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:my_plugin_android01/my_plugin_android01.dart';
 
 class InfoAndroid extends StatefulWidget {
+  const InfoAndroid({Key? key}) : super(key: key);
+
   @override
   State<InfoAndroid> createState() => InfoAndroidState();
 }
@@ -16,6 +18,7 @@ class InfoAndroidState extends State<InfoAndroid> {
   String releaseVersion = '';
   String releaseName = '';
   String apiVersion = '';
+  int apiInt = -1;
 
   InfoAndroidState() {
     init();
@@ -46,14 +49,22 @@ class InfoAndroidState extends State<InfoAndroid> {
 
   Future<void> getApiVersion() async {
     try {
-      apiVersion = await _myPluginAndroid01Plugin.getAPIVersion() ?? strUnknown;
+      apiVersion = await _myPluginAndroid01Plugin.getApiVersion() ?? strUnknown;
     } on PlatformException {
       apiVersion = strFailed;
     }
   }
 
+  Future<void> getApiInt() async {
+    try {
+      apiInt = await _myPluginAndroid01Plugin.getApiInt() ?? -1;
+    } on PlatformException {
+      apiInt = -2;
+    }
+  }
+
   String get info {
-    return 'Android$releaseVersion API$apiVersion ($releaseName)';
+    return 'Android$releaseVersion API$apiVersion ($releaseName) : apiInt=$apiInt';
   }
 
   @override

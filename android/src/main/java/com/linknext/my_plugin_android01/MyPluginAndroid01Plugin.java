@@ -37,8 +37,11 @@ public class MyPluginAndroid01Plugin implements FlutterPlugin, MethodCallHandler
     else if(call.method.equals("getReleaseName")){
       result.success(getReleaseName());
     }
-    else if(call.method.equals("getAPIVersion")){
+    else if(call.method.equals("getApiVersion")){
       result.success("" + android.os.Build.VERSION.SDK_INT);
+    }
+    else if(call.method.equals("getApiInt")){
+      result.success(android.os.Build.VERSION.SDK_INT);
     }
     else {
       result.notImplemented();

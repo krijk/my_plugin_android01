@@ -23,6 +23,6 @@ void main() {
   });
 
   test('getAPIVersion', () async {
-    expect(await platform.getAPIVersion(), '42');
+    expect(await platform.getApiVersion(), '42');
   });
 }

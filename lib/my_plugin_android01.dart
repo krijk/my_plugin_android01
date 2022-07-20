@@ -14,7 +14,11 @@ class MyPluginAndroid01 {
     return MyPluginAndroid01Platform.instance.getReleaseName();
   }
 
-  Future<String?> getAPIVersion() {
-    return MyPluginAndroid01Platform.instance.getAPIVersion();
+  Future<String?> getApiVersion() {
+    return MyPluginAndroid01Platform.instance.getApiVersion();
+  }
+
+  Future<int?> getApiInt() {
+    return MyPluginAndroid01Platform.instance.getApiInt();
   }
 }

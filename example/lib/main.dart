@@ -31,8 +31,8 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text('Running on:'),
+            children: const [
+              Text('Running on:'),
               InfoAndroid(),
             ],
           ),

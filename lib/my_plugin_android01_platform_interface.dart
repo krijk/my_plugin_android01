@@ -35,7 +35,11 @@ abstract class MyPluginAndroid01Platform extends PlatformInterface {
     throw UnimplementedError('releaseName() has not been implemented.');
   }
 
-  Future<String?> getAPIVersion() {
+  Future<String?> getApiVersion() {
     throw UnimplementedError('apiVersion() has not been implemented.');
+  }
+
+  Future<int?> getApiInt() {
+    throw UnimplementedError('apiInt() has not been implemented.');
   }
 }

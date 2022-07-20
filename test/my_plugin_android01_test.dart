@@ -22,7 +22,12 @@ class MockMyPluginAndroid01Platform
   }
 
   @override
-  Future<String?> getAPIVersion() => Future.value('13');
+  Future<String?> getApiVersion() => Future.value('31');
+
+  @override
+  Future<int?> getApiInt() {
+    return Future.value(31);
+  }
 }
 
 void main() {
@@ -56,11 +61,19 @@ void main() {
     expect(await myPluginAndroid01Plugin.getReleaseName(), 'TIRAMISU');
   });
 
-  test('getAPIVersion', () async {
+  test('getApiVersion', () async {
     MyPluginAndroid01 myPluginAndroid01Plugin = MyPluginAndroid01();
     MockMyPluginAndroid01Platform fakePlatform = MockMyPluginAndroid01Platform();
     MyPluginAndroid01Platform.instance = fakePlatform;
 
-    expect(await myPluginAndroid01Plugin.getAPIVersion(), '13');
+    expect(await myPluginAndroid01Plugin.getApiVersion(), '31');
+  });
+
+  test('getApiInt', () async {
+    MyPluginAndroid01 myPluginAndroid01Plugin = MyPluginAndroid01();
+    MockMyPluginAndroid01Platform fakePlatform = MockMyPluginAndroid01Platform();
+    MyPluginAndroid01Platform.instance = fakePlatform;
+
+    expect(await myPluginAndroid01Plugin.getApiVersion(), '31');
   });
 }
