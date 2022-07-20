@@ -7,18 +7,18 @@ class InfoAndroid {
   static const String strUnknown = 'Unknown';
   static const String strFailed = 'Failed';
 
-  String releaseVersion = '';
-  String releaseName = '';
-  String apiVersion = '';
+  String releaseVersion = strUnknown;
+  String releaseName = strUnknown;
+  String apiVersion = strUnknown;
 
   InfoAndroid() {
     init();
   }
 
   Future<void> init() async {
-    getReleaseVersion();
-    getReleaseName();
-    getApiVersion();
+    await getReleaseVersion();
+    await getReleaseName();
+    await getApiVersion();
   }
 
   Future<void> getReleaseVersion() async {
