@@ -1,6 +1,6 @@
 name: my_plugin_android01
 description: my android plugin 01
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/krijk/
 
 environment:
