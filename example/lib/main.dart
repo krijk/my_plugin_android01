@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 
 import 'info_android.dart';
 
+GlobalKey<InfoAndroidState> _keyInfoAndroid = GlobalKey<InfoAndroidState>();
+
 void main() {
   runApp(const MyApp());
 }
 
+///
 class MyApp extends StatefulWidget {
+  ///
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -14,10 +18,22 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  late InfoAndroid infoAndroid;
 
   @override
   void initState() {
+    infoAndroid = InfoAndroid(
+      key: _keyInfoAndroid,
+    );
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _asyncInit();
+    });
     super.initState();
+  }
+
+  /// async init
+  Future<void> _asyncInit() async {
+    _keyInfoAndroid.currentState?.init();
   }
 
   @override
@@ -30,10 +46,10 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
-              Text('Running on:'),
-              InfoAndroid(),
+            // crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              const Text('Running on:'),
+              infoAndroid,
             ],
           ),
         ),
