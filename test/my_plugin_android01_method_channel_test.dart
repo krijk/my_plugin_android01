@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:my_plugin_android01/my_plugin_android01_method_channel.dart';
 
 void main() {
-  MethodChannelMyPluginAndroid01 platform = MethodChannelMyPluginAndroid01();
+  final MethodChannelMyPluginAndroid01 platform = MethodChannelMyPluginAndroid01();
   const MethodChannel channel = MethodChannel('my_plugin_android01');
 
   TestWidgetsFlutterBinding.ensureInitialized();

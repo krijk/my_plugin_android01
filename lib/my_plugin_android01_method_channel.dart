@@ -7,35 +7,35 @@ import 'my_plugin_android01_platform_interface.dart';
 class MethodChannelMyPluginAndroid01 extends MyPluginAndroid01Platform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
-  final methodChannel = const MethodChannel('my_plugin_android01');
+  final MethodChannel methodChannel = const MethodChannel('my_plugin_android01');
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
+    final String? version = await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
 
   @override
   Future<String?> getReleaseVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getReleaseVersion');
+    final String? version = await methodChannel.invokeMethod<String>('getReleaseVersion');
     return version;
   }
 
   @override
   Future<String?> getReleaseName() async {
-    final version = await methodChannel.invokeMethod<String>('getReleaseName');
+    final String? version = await methodChannel.invokeMethod<String>('getReleaseName');
     return version;
   }
 
   @override
   Future<String?> getApiVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getApiVersion');
+    final String? version = await methodChannel.invokeMethod<String>('getApiVersion');
     return version;
   }
 
   @override
   Future<int?> getApiInt() async {
-    final version = await methodChannel.invokeMethod<int>('getApiInt');
+    final int? version = await methodChannel.invokeMethod<int>('getApiInt');
     return version;
   }
 }

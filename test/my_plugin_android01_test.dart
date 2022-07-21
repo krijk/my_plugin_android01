@@ -1,7 +1,9 @@
+// ignore_for_file: always_specify_types
+// ignore_for_file: prefer_final_locals
 import 'package:flutter_test/flutter_test.dart';
 import 'package:my_plugin_android01/my_plugin_android01.dart';
-import 'package:my_plugin_android01/my_plugin_android01_platform_interface.dart';
 import 'package:my_plugin_android01/my_plugin_android01_method_channel.dart';
+import 'package:my_plugin_android01/my_plugin_android01_platform_interface.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockMyPluginAndroid01Platform 
@@ -9,7 +11,7 @@ class MockMyPluginAndroid01Platform
     implements MyPluginAndroid01Platform {
 
   @override
-  Future<String?> getPlatformVersion() => Future.value('Android 42');
+  Future<String?> getPlatformVersion() => Future<String?>.value('Android 42');
 
   @override
   Future<String?> getReleaseVersion() {
